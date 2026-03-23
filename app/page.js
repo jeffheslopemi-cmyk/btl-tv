@@ -47,3 +47,11 @@ export default function Home() {
     </div>
   );
 }
+<a
+  href="https://www.geef.nl/nl/doneer?charity=9949&backLink=https%3A%2F%2Fwww.geef.nl%2Fnl%2Fdoel%2Fbe-the-light-television%2Fover-ons"
+  target="_blank"
+>
+  <button style={{ marginTop: "30px", padding: "12px 25px", background: "gold" }}>
+    Donate Now
+  </button>
+</a>
