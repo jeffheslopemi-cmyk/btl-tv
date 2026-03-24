@@ -1,31 +1,24 @@
 "use client";
-import { useEffect, useRef } from "react";
 import Hls from "hls.js";
+import { useRef, useEffect } from "react";
 
 export default function Live() {
-  const videoRef = useRef(null);
-
+  const ref = useRef(null);
   useEffect(() => {
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource("https://livecdn.live247stream.com/btl/tv/playlist.m3u8");
-      hls.attachMedia(videoRef.current);
+      hls.loadSource("[livecdn.live247stream.com](https://livecdn.live247stream.com/btl/tv/playlist.m3u8)");
+      hls.attachMedia(ref.current);
     }
   }, []);
 
   return (
     <div style={{ textAlign: "center", padding: "40px" }}>
-      <h1>Live TV</h1>
-
-      <video
-        ref={videoRef}
-        controls
-        style={{
-          width: "80%",
-          maxWidth: "900px",
-          borderRadius: "20px",
-        }}
-      />
+      <h1>BTL TV Live</h1>
+      <video ref={ref} controls style={{
+        width: "80%", borderRadius: "20px", marginTop: "20px"
+      }} />
     </div>
   );
 }
+
